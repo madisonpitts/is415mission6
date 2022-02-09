@@ -1,0 +1,48 @@
+﻿
+@{
+
+    ViewData["Title"] = "Tasks Page";
+
+}
+
+<!--Import taskresponse model-->
+@model mission6.Models.TaskResponse
+
+<h1>Fill out your tasks!!</h1>
+<!--create form to fill out different tasks.-->
+<div>
+    <form method="post">
+        <label asp-for="CategoryID">Category</label>
+        <select asp-for="CategoryID">
+            <option value="">Select a Category</option>
+            @foreach (Category c in ViewBag.Categories)
+            {
+                <option value="@c.CategoryID">@c.CategoryName</option>
+            }
+        </select>
+
+        <label asp-for="TaskName">Task</label>
+        <input asp-for="TaskName" />
+
+        <label asp-for="DueDate">Due Date</label>
+        <input asp-for="DueDate" />
+
+        <label asp-for="Quadrant">Quadrant</label>
+        <select asp-for="Quadrant">
+            <option value="0">Important/Urgent</option>
+            <option value="1">Important/Not Urgent</option>
+            <option value="2">Not Important/Urgent</option>
+            <option value="3">Not Important/Not Urgent</option>
+        </select>
+        <label asp-for="Completed">Completed</label>
+        <select asp-for="Completed">
+            <option value="true">Yes</option>
+            <option value="false">No</option>
+        </select>
+
+        <!--Add asp validation for submit button-->
+        <button id="btnSend" type="submit">Submit</button>
+        <div asp-validation-summary="All"></div>
+    </form>
+</div>
+
