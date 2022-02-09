@@ -49,6 +49,18 @@ namespace mission6.Controllers
 
         public IActionResult Quadrants()
         {
+            ViewBag.Quad1 = TaskResponseContext.Responses
+                .Where( x => x.Quadrant == 1)
+                .ToList();
+            ViewBag.Quad2 = TaskResponseContext.Responses
+                .Where(x => x.Quadrant == 2)
+                .ToList();
+            ViewBag.Quad3 = TaskResponseContext.Responses
+                .Where(x => x.Quadrant == 3)
+                .ToList();
+            ViewBag.Quad4 = TaskResponseContext.Responses
+                .Where(x => x.Quadrant == 4)
+                .ToList();
             return View();
         }
     }
