@@ -93,6 +93,19 @@ namespace mission6.Controllers
             TaskResponseContext.SaveChanges();
             return RedirectToAction("Quadrants");
         }
+
+        public IActionResult CheckOff(int id)
+        {
+            var item = TaskResponseContext.Responses.Single(x => x.TaskID == id);
+            if (!item.Completed)
+            {
+                item.Completed = true;
+                TaskResponseContext.SaveChanges();
+            }
+            return RedirectToAction("Quadrants");
+        }
+
+
     }
 }
 
