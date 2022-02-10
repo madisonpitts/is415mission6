@@ -24,7 +24,7 @@
             <ul>
                 @foreach (TaskResponse R in ViewBag.Quad1)
                 {
-                    <li>@R.TaskName</li>
+                <li>@R.TaskName <a class="badge badge-warning">Edit</a> <a class="badge badge-danger">Delete</a></li>
                 }
             </ul>
         </div>
@@ -34,7 +34,7 @@
             <ul>
                 @foreach (TaskResponse R in ViewBag.Quad2)
                 {
-                    <li>@R.TaskName</li>
+                    <li>@R.TaskName <a class="badge badge-warning">Edit</a> <a class="badge badge-danger">Delete</a></li>
                 }
             </ul>
         </div>
@@ -48,7 +48,7 @@
             <ul>
                 @foreach (TaskResponse R in ViewBag.Quad3)
                 {
-                    <li>@R.TaskName</li>
+                <li>@R.TaskName <a class="badge badge-warning">Edit</a> <a class="badge badge-danger">Delete</a></li>
                 }
             </ul>
         </div>
@@ -58,7 +58,7 @@
             <ul>
                 @foreach (TaskResponse R in ViewBag.Quad4)
                 {
-                    <li>@R.TaskName</li>
+                <li>@R.TaskName <a class="badge badge-warning">Edit</a> <a class="badge badge-danger">Delete</a></li>
                 }
             </ul>
         </div>
