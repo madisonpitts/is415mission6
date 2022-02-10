@@ -26,7 +26,7 @@
                 @foreach (TaskResponse R in ViewBag.Quad1)
                 {
 
-                <li>@R.TaskName <a asp-controller="Home" asp-action="Edit" asp-route-id=@R.TaskID class="badge badge-warning">Edit</a> <a asp-controller="Home" asp-action="Delete" asp-route-id=@R.TaskID class="badge badge-danger">Delete</a></li>
+                <li>@R.TaskName <a asp-controller="Home" asp-action="Edit" asp-route-id=@R.TaskID class="badge badge-secondary">Edit</a> <a asp-controller="Home" asp-action="Delete" asp-route-id=@R.TaskID class="badge badge-dark">Delete</a> <a asp-controller="Home" asp-action="Complete" asp-route-id=@R.TaskID class="badge badge-info">Complete</a></li>
 
                 }
             </ul>
@@ -38,7 +38,7 @@
                 @foreach (TaskResponse R in ViewBag.Quad2)
                 {
 
-                <li>@R.TaskName <a asp-controller="Home" asp-action="Edit" asp-route-id=@R.TaskID class="badge badge-warning">Edit</a> <a asp-controller="Home" asp-action="Delete" asp-route-id=@R.TaskID class="badge badge-danger">Delete</a></li>
+                <li>@R.TaskName <a asp-controller="Home" asp-action="Edit" asp-route-id=@R.TaskID class="badge badge-secondary">Edit</a> <a asp-controller="Home" asp-action="Delete" asp-route-id=@R.TaskID class="badge badge-dark">Delete</a> <a asp-controller="Home" asp-action="Complete" asp-route-id=@R.TaskID class="badge badge-info">Complete</a></li>
 
                 }
             </ul>
@@ -54,7 +54,7 @@
                 @foreach (TaskResponse R in ViewBag.Quad3)
                 {
 
-                <li>@R.TaskName <a asp-controller="Home" asp-action="Edit" asp-route-id=@R.TaskID class="badge badge-warning">Edit</a> <a asp-controller="Home" asp-action="Delete" asp-route-id=@R.TaskID class="badge badge-danger">Delete</a></li>
+                <li>@R.TaskName <a asp-controller="Home" asp-action="Edit" asp-route-id=@R.TaskID class="badge badge-secondary">Edit</a> <a asp-controller="Home" asp-action="Delete" asp-route-id=@R.TaskID class="badge badge-dark">Delete</a> <a asp-controller="Home" asp-action="Complete" asp-route-id=@R.TaskID class="badge badge-info">Complete</a></li>
 
                 }
             </ul>
@@ -66,9 +66,9 @@
                 @foreach (TaskResponse R in ViewBag.Quad4)
                 {
 
-                    <li>@R.TaskName <a asp-controller="Home" asp-action="Edit" asp-route-id=@R.TaskID class="badge badge-warning">Edit</a> <a asp-controller="Home" asp-action="Delete" asp-route-id=@R.TaskID class="badge badge-danger">Delete</a></li>
+                    <li>@R.TaskName <a asp-controller="Home" asp-action="Edit" asp-route-id=@R.TaskID class="badge badge-secondary">Edit</a> <a asp-controller="Home" asp-action="Delete" asp-route-id=@R.TaskID class="badge badge-dark">Delete</a> <a asp-controller="Home" asp-action="Complete" asp-route-id=@R.TaskID class="badge badge-info">Complete</a></li>
 
-                }
+                
 
                 }
             </ul>
