@@ -23,10 +23,10 @@
         <div class="col-5">
             <h4>Quadrant1</h4>
             <ul>
-                @foreach (TaskResponse x in ViewBag.Quad1)
+                @foreach (TaskResponse R in ViewBag.Quad1)
                 {
 
-                <li>@R.TaskName <a class="badge badge-warning">Edit</a> <a class="badge badge-danger">Delete</a></li>
+                <li>@R.TaskName <a asp-controller="Home" asp-action="Edit" asp-route-id=@R.TaskID class="badge badge-warning">Edit</a> <a asp-controller="Home" asp-action="Delete" asp-route-id=@R.TaskID class="badge badge-danger">Delete</a></li>
 
                 }
             </ul>
@@ -38,7 +38,7 @@
                 @foreach (TaskResponse R in ViewBag.Quad2)
                 {
 
-                    <li>@R.TaskName <a class="badge badge-warning">Edit</a> <a class="badge badge-danger">Delete</a></li>
+                <li>@R.TaskName <a asp-controller="Home" asp-action="Edit" asp-route-id=@R.TaskID class="badge badge-warning">Edit</a> <a asp-controller="Home" asp-action="Delete" asp-route-id=@R.TaskID class="badge badge-danger">Delete</a></li>
 
                 }
             </ul>
@@ -54,7 +54,7 @@
                 @foreach (TaskResponse R in ViewBag.Quad3)
                 {
 
-                <li>@R.TaskName <a class="badge badge-warning">Edit</a> <a class="badge badge-danger">Delete</a></li>
+                <li>@R.TaskName <a asp-controller="Home" asp-action="Edit" asp-route-id=@R.TaskID class="badge badge-warning">Edit</a> <a asp-controller="Home" asp-action="Delete" asp-route-id=@R.TaskID class="badge badge-danger">Delete</a></li>
 
                 }
             </ul>
@@ -66,7 +66,9 @@
                 @foreach (TaskResponse R in ViewBag.Quad4)
                 {
 
-                <li>@R.TaskName <a class="badge badge-warning">Edit</a> <a class="badge badge-danger">Delete</a></li>
+                    <li>@R.TaskName <a asp-controller="Home" asp-action="Edit" asp-route-id=@R.TaskID class="badge badge-warning">Edit</a> <a asp-controller="Home" asp-action="Delete" asp-route-id=@R.TaskID class="badge badge-danger">Delete</a></li>
+
+                }
 
                 }
             </ul>
