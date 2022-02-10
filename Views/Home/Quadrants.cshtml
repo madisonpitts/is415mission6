@@ -1,0 +1,66 @@
+﻿@{
+    ViewData["Title"] = "Quadrants";
+}
+
+<div class="container">
+    <div class="row justify-content-center border-bottom">
+        <h1 class="text-center">The Time Management Matrix</h1>
+    </div>
+    <div class="row">
+        <div class="col-2"></div>
+        <div class="col-5 border-bottom">
+            <h4>Urgent</h4>
+        </div>
+        <div class="col-5 border-bottom">
+            <h4>Not Urgent</h4>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-2 border-right">
+            <h4>Important</h4>
+        </div>
+        <div class="col-5">
+            <h4>Quadrant1</h4>
+            <ul>
+                @foreach (TaskResponse R in ViewBag.Quad1)
+                {
+                    <li>@R.TaskName</li>
+                }
+            </ul>
+        </div>
+
+        <div class="col-5">
+            <h4>Quadrant2</h4>
+            <ul>
+                @foreach (TaskResponse R in ViewBag.Quad2)
+                {
+                    <li>@R.TaskName</li>
+                }
+            </ul>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-2 border-right">
+            <h4>Not Important</h4>
+        </div>
+        <div class="col-5">
+            <h4>Quadrant3</h4>
+            <ul>
+                @foreach (TaskResponse R in ViewBag.Quad3)
+                {
+                    <li>@R.TaskName</li>
+                }
+            </ul>
+        </div>
+
+        <div class="col-5">
+            <h4>Quadrant4</h4>
+            <ul>
+                @foreach (TaskResponse R in ViewBag.Quad4)
+                {
+                    <li>@R.TaskName</li>
+                }
+            </ul>
+        </div>
+    </div>
+</div>
