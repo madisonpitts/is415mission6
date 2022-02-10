@@ -50,16 +50,16 @@ namespace mission6.Controllers
         public IActionResult Quadrants()
         {
             ViewBag.Quad1 = TaskResponseContext.Responses
-                .Where( x => x.Quadrant == 1)
+                .Where( x => x.Quadrant == 1 && x.Completed == false)
                 .ToList();
             ViewBag.Quad2 = TaskResponseContext.Responses
-                .Where(x => x.Quadrant == 2)
+                .Where(x => x.Quadrant == 2 && x.Completed == false)
                 .ToList();
             ViewBag.Quad3 = TaskResponseContext.Responses
-                .Where(x => x.Quadrant == 3)
+                .Where(x => x.Quadrant == 3 && x.Completed == false)
                 .ToList();
             ViewBag.Quad4 = TaskResponseContext.Responses
-                .Where(x => x.Quadrant == 4)
+                .Where(x => x.Quadrant == 4 && x.Completed == false)
                 .ToList();
             return View();
         }
@@ -80,6 +80,20 @@ namespace mission6.Controllers
             TaskResponseContext.SaveChanges();
             return RedirectToAction("Quadrants");
         }
+
+        public IActionResult Complete(int id)
+        {
+            var item = TaskResponseContext.Responses.Single(x => x.TaskID == id);
+            if (!item.Completed)
+            {
+                item.Completed = true;
+                TaskResponseContext.SaveChanges();
+            }
+            return RedirectToAction("Quadrants");
+        }
+
+        
+
         [HttpGet]
         public IActionResult Delete(int id)
         {
