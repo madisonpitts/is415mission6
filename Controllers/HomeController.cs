@@ -27,7 +27,7 @@ namespace mission6.Controllers
         public IActionResult Tasks()
         {
             ViewBag.Categories = TaskResponseContext.Categories.ToList();
-            return View();
+            return View(new TaskResponse());
         }
 
         [HttpPost]
@@ -38,7 +38,7 @@ namespace mission6.Controllers
                 TaskResponseContext.Add(tr);
                 TaskResponseContext.SaveChanges();
 
-                return View("Quadrants", tr);
+                return RedirectToAction("Quadrants");
             }
             else
             {
@@ -62,6 +62,36 @@ namespace mission6.Controllers
                 .Where(x => x.Quadrant == 4)
                 .ToList();
             return View();
+        }
+
+        [HttpGet]
+        public IActionResult Edit(int id)
+        {
+            ViewBag.categories = TaskResponseContext.Categories.ToList();
+
+            var item = TaskResponseContext.Responses.Single(x => x.TaskID == id);
+            return View("Tasks", item);
+        }
+
+        [HttpPost]
+        public IActionResult Edit(TaskResponse x)
+        {
+            TaskResponseContext.Update(x);
+            TaskResponseContext.SaveChanges();
+            return RedirectToAction("Quadrants");
+        }
+        [HttpGet]
+        public IActionResult Delete(int id)
+        {
+            var item = TaskResponseContext.Responses.Single(x => x.TaskID == id);
+            return View(item);
+        }
+        [HttpPost]
+        public IActionResult Delete(TaskResponse tr)
+        {
+            TaskResponseContext.Responses.Remove(tr);
+            TaskResponseContext.SaveChanges();
+            return RedirectToAction("Quadrants");
         }
     }
 }

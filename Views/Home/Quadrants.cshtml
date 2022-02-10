@@ -1,6 +1,7 @@
 ﻿@{
     ViewData["Title"] = "Quadrants";
 }
+@model List<TaskResponse>
 
 <div class="container">
     <div class="row justify-content-center border-bottom">
@@ -22,9 +23,14 @@
         <div class="col-5">
             <h4>Quadrant1</h4>
             <ul>
-                @foreach (TaskResponse R in ViewBag.Quad1)
+                @foreach (TaskResponse x in ViewBag.Quad1)
                 {
-                    <li>@R.TaskName</li>
+                <li>
+                    @x.TaskName&nbsp
+                    <td><a asp-controller=Home asp-action=Edit asp-route-id=@x.TaskID>Edit</a></td>&nbsp
+                    <td><a asp-controller=Home asp-action=Delete asp-route-id=@x.TaskID>Delete</a></td>
+                </li>
+                 
                 }
             </ul>
         </div>
@@ -34,7 +40,11 @@
             <ul>
                 @foreach (TaskResponse R in ViewBag.Quad2)
                 {
-                    <li>@R.TaskName</li>
+                <li>
+                    @R.TaskName&nbsp
+                    <td><a asp-controller=Home asp-action=Edit asp-route-id=@R.TaskID>Edit</a></td>&nbsp
+                    <td><a asp-controller=Home asp-action=Delete asp-route-id=@R.TaskID>Delete</a></td>
+                </li>
                 }
             </ul>
         </div>
@@ -48,7 +58,11 @@
             <ul>
                 @foreach (TaskResponse R in ViewBag.Quad3)
                 {
-                    <li>@R.TaskName</li>
+                <li>
+                    @R.TaskName&nbsp
+                    <td><a asp-controller=Home asp-action=Edit asp-route-id=@R.TaskID>Edit</a></td>&nbsp
+                    <td><a asp-controller=Home asp-action=Delete asp-route-id=@R.TaskID>Delete</a></td>
+                </li>
                 }
             </ul>
         </div>
@@ -58,7 +72,11 @@
             <ul>
                 @foreach (TaskResponse R in ViewBag.Quad4)
                 {
-                    <li>@R.TaskName</li>
+                <li>
+                    @R.TaskName&nbsp
+                    <td><a asp-controller=Home asp-action=Edit asp-route-id=@R.TaskID>Edit</a></td>&nbsp
+                    <td><a asp-controller=Home asp-action=Delete asp-route-id=@R.TaskID>Delete</a></td>
+                </li>
                 }
             </ul>
         </div>
